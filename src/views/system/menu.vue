@@ -207,7 +207,7 @@ export default {
     handleCreate(row = "") {
       this.resetTemp();
       console.log("row:", row);
-      this.temp.pid = row.menuId || 0;
+      this.temp.pid = (row.pid && !row.isaction) ? row.pid : row.menuId;
       this.createRow = row
       this.dialogStatus = "create";
       this.dialogFormVisible = true;
